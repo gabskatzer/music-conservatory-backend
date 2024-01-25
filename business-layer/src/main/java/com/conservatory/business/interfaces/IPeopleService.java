@@ -11,5 +11,8 @@ public interface IPeopleService {
 	Person findById(Integer id);
 	Person createPerson(Person person);
 	Optional<Person> getPersonById(Integer id);
+	Optional<Person> findByPersonId(Long personId);
+	Person updatePerson(Integer id, Person updatedPerson);
+	void deletePerson(Integer id);
 
 }

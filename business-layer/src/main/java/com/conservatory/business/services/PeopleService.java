@@ -35,5 +35,26 @@ public class PeopleService implements IPeopleService{
 		return peopleRepository.findById(id);
 	}
 
+	@Override
+	public Optional<Person> findByPersonId(Long personId) {
+		return peopleRepository.findByPersonId(personId);
+	}
+
+	@Override
+	public Person updatePerson(Integer id, Person updatedPerson) {
+		if(peopleRepository.existsById(id)) {
+			updatedPerson.setId(id);
+			return peopleRepository.save(updatedPerson);
+		}else {
+			return null;
+		}
+	}
+
+	@Override
+	public void deletePerson(Integer id) {
+		peopleRepository.deleteById(id);
+		
+	}
+
 	
 }
