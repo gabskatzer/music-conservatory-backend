@@ -1,0 +1,16 @@
+create table person
+(
+	id int not null,
+	name varchar(255) not null,
+	person_id bigint,
+	active boolean,
+	email varchar(255),
+	address varchar(400),
+	occupation varchar(50),
+	image varchar(255),
+	date_of_birth date,
+	phone1 bigint,
+	phone2 bigint,
+	primary key (id)
+);
+

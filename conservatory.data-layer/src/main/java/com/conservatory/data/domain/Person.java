@@ -2,8 +2,8 @@ package com.conservatory.data.domain;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -11,12 +11,12 @@ public class Person {
 
 
 	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
 	
-	private String personId;
+	private Long personId;
 	
 	private boolean active;
 	
@@ -50,11 +50,11 @@ public class Person {
 		this.name = name;
 	}
 
-	public String getPersonId() {
+	public Long getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(String personId) {
+	public void setPersonId(Long personId) {
 		this.personId = personId;
 	}
 
