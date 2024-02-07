@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.conservatory.business.interfaces.IPeopleService;
 import com.conservatory.data.domain.Person;
 
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -29,7 +31,7 @@ public class PeopleController {
 		
         return people;
     }
-	
+	@Transactional
 	@PostMapping
     public Person createPerson(@RequestBody Person person) {
 

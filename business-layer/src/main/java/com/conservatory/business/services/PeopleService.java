@@ -56,5 +56,23 @@ public class PeopleService implements IPeopleService{
 		
 	}
 
+	@Override
+	public List<Person> getAllProfessors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getAllCommissioned() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

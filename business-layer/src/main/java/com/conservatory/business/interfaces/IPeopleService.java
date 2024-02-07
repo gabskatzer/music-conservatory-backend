@@ -14,5 +14,9 @@ public interface IPeopleService {
 	Optional<Person> findByPersonId(Long personId);
 	Person updatePerson(Integer id, Person updatedPerson);
 	void deletePerson(Integer id);
+	
+	List<Person> getAllProfessors();
+	List<Person> getAllStudents();
+	List<Person> getAllCommissioned();
 
 }

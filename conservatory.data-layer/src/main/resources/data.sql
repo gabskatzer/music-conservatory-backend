@@ -1,4 +1,4 @@
-insert into PERSON(NAME, PERSON_ID, ACTIVE, EMAIL, ADDRESS, OCCUPATION, IMAGE, DATE_OF_BIRTH, PHONE1, PHONE2)
+insert into PERSON(NAME, PERSON_ID, ACTIVE, EMAIL, ADDRESS, OCCUPATION, IMAGE, DOB, PHONE1, PHONE2)
 values
 ('Gabriela Sanchez', 456, true, 'gabskatze@gmail.com', '2110 Sutton Ridge Ave', 'Software Engineer', 'image', '2019-01-10', 323, 1),
 ('Leonardo Jimenez', 123, true, 'ljimenez@gmail.com', 'Heredia Centro', 'Estudiante', 'image', '2010-01-10', 323, 1),

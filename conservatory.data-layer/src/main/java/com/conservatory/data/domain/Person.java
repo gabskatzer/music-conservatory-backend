@@ -1,5 +1,12 @@
 package com.conservatory.data.domain;
-import java.time.LocalDate;
+import java.util.Date;
+//import java.time.LocalDate;
+//import java.util.Date;
+import java.util.List;
+
+//import org.springframework.format.annotation.DateTimeFormat;
+
+import com.conservatory.data.enums.PersonType;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,11 +35,38 @@ public class Person {
 	
 	private String image;
 	
-	private LocalDate dateOfBirth;
+//	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	private Date dob;
 	
-	private int phone1;
+//	public String getDob() {
+//		return dob;
+//	}
+//
+//	public void setDob(String dob) {
+//		this.dob = dob;
+//	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	private Long phone1;
 	
-	private int phone2;
+	private Long phone2;
+	
+	private List<PersonType> personType;
+
+	public List<PersonType> getPersonType() {
+		return personType;
+	}
+
+	public void setPersonType(List<PersonType> personType) {
+		this.personType = personType;
+	}
 
 	public int getId() {
 		return id;
@@ -98,27 +132,19 @@ public class Person {
 		this.image = image;
 	}
 
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
-	public int getPhone1() {
+	public Long getPhone1() {
 		return phone1;
 	}
 
-	public void setPhone1(int phone1) {
+	public void setPhone1(Long phone1) {
 		this.phone1 = phone1;
 	}
 
-	public int getPhone2() {
+	public Long getPhone2() {
 		return phone2;
 	}
 
-	public void setPhone2(int phone2) {
+	public void setPhone2(Long phone2) {
 		this.phone2 = phone2;
 	}
 
