@@ -1,19 +1,26 @@
 package com.conservatory.data.domain;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
 public class Instrument {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	private String name;
 
 	private boolean individual;
 
-	private List<Student> students;
-
-	private List<Professor> professors;
-
-	private List<Course> courses;
+//	private List<Student> students;
+//
+//	private List<Professor> professors;
+//
+//	private List<Course> courses;
 
 	public Instrument() {
 		super();
@@ -44,29 +51,29 @@ public class Instrument {
 		this.individual = individual;
 	}
 
-	public List<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
-
-	public List<Professor> getProfessors() {
-		return professors;
-	}
-
-	public void setProfessors(List<Professor> professors) {
-		this.professors = professors;
-	}
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
+//	public List<Student> getStudents() {
+//		return students;
+//	}
+//
+//	public void setStudents(List<Student> students) {
+//		this.students = students;
+//	}
+//
+//	public List<Professor> getProfessors() {
+//		return professors;
+//	}
+//
+//	public void setProfessors(List<Professor> professors) {
+//		this.professors = professors;
+//	}
+//
+//	public List<Course> getCourses() {
+//		return courses;
+//	}
+//
+//	public void setCourses(List<Course> courses) {
+//		this.courses = courses;
+//	}
 	
 	
 

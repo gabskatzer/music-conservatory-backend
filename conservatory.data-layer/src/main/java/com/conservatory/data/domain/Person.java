@@ -35,16 +35,8 @@ public class Person {
 	
 	private String image;
 	
-//	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date dob;
 	
-//	public String getDob() {
-//		return dob;
-//	}
-//
-//	public void setDob(String dob) {
-//		this.dob = dob;
-//	}
 
 	public Date getDob() {
 		return dob;
