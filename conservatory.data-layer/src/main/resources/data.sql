@@ -6,3 +6,9 @@ values
 ('Ricardo Zepeda', 980, true, 'rzepeda@gmail.com', 'El Coyol, Alajuela', 'Administrador Empresas', 'image', '1987-09-09', 323, 1),
 ('Dana Arias', 777, true, 'darias@gmail.com', 'La Aurora, Heredia', 'Periodista', 'image', '2013-01-10', 323, 1);
 
+insert into STUDENT(ID, EDUCATIONAL_LEVEL, TYPE)
+values
+(1, 'bachellor', 'regular'),
+(2, 'high school', 'becado'),
+(3, 'bachellor', 'regular'),
+(4, 'bachellor', 'regular');

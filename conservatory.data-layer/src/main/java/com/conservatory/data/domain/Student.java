@@ -1,21 +1,24 @@
 package com.conservatory.data.domain;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Student extends Person{
+	
+//	private Commissioned commissioned;
 
-	private Commissioned commissioned;
+	private String type;//regular || becado
 
-	private String type;
+	//private List<Instrument> instruments;
 
-	private List<Instrument> instruments;
-
-	public Commissioned getCommissioned() {
-		return commissioned;
-	}
-
-	public void setCommissioned(Commissioned commissioned) {
-		this.commissioned = commissioned;
-	}
+//	public Commissioned getCommissioned() {
+//		return commissioned;
+//	}
+//
+//	public void setCommissioned(Commissioned commissioned) {
+//		this.commissioned = commissioned;
+//	}
 
 	public String getType() {
 		return type;
@@ -25,13 +28,13 @@ public class Student extends Person{
 		this.type = type;
 	}
 
-	public List<Instrument> getInstruments() {
-		return instruments;
-	}
-
-	public void setInstruments(List<Instrument> instruments) {
-		this.instruments = instruments;
-	}
+//	public List<Instrument> getInstruments() {
+//		return instruments;
+//	}
+//
+//	public void setInstruments(List<Instrument> instruments) {
+//		this.instruments = instruments;
+//	}
 
 	public String getEducationalLevel() {
 		return educationalLevel;

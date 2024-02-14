@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.conservatory.business.interfaces.IPeopleService;
+import com.conservatory.business.interfaces.IStudentsService;
 import com.conservatory.data.domain.Person;
+import com.conservatory.data.domain.Student;
 
 import jakarta.transaction.Transactional;
 
@@ -19,42 +20,37 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/people")
-public class PeopleController {
+@RequestMapping("/api/students")
+public class StudentsController {
 	
 	@Autowired
-	private IPeopleService peopleService;
+	private IStudentsService studentsService;
 
 	@GetMapping
-    public List<Person> getAllPeople() {
-		List<Person> people = peopleService.getAllPeople();
+    public List<Student> getAllStudents() {
+		List<Student> people = studentsService.getAllStudents();
 		
         return people;
     }
 	@Transactional
 	@PostMapping
-    public Person createPerson(@RequestBody Person person) {
+    public Student createStudent(@RequestBody Student student) {
 
-        return peopleService.createPerson(person);
+        return studentsService.createStudent(student);
     }
 	
 	@GetMapping("/{id}")
-    public Optional<Person> getPersonById(@PathVariable Integer id) {
-        return peopleService.getPersonById(id);
-    }
-	
-	@GetMapping("/search")
-    public Optional<Person> getPersonByPersonId(Long personId) {
-        return peopleService.findByPersonId(personId);
+    public Student getStudentById(@PathVariable Integer id) {
+        return studentsService.getById(id);
     }
 	
 	@PutMapping("/{id}")
-	public Person updatePerson(@PathVariable Integer id, @RequestBody Person updatedPerson) {
-		return peopleService.updatePerson(id, updatedPerson);
+	public Student updateStudent(@PathVariable Integer id, @RequestBody Student updatedStudent) {
+		return studentsService.updateStudent(id, updatedStudent);
 	}
 	@DeleteMapping("/{id}")
-	public void deletePerson(@PathVariable Integer id) {
-		peopleService.deletePerson(id);
+	public void deleteStudent(@PathVariable Integer id) {
+		studentsService.deleteStudent(id);
 	}
 }
 
