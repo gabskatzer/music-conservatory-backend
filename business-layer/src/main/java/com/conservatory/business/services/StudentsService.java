@@ -22,11 +22,6 @@ public class StudentsService implements IStudentsService{
 		return studentsRepository.findAll();
 	}
 
-	@Override
-	public Student getById(Integer id) {
-		return studentsRepository.getReferenceById(id);
-	}
-	
 	public Student createStudent(Student student) {
         return studentsRepository.save(student);
     }
@@ -45,6 +40,11 @@ public Student updateStudent(Integer id, Student updatedStudent) {
 }else {
 	return null;
 }
+}
+
+@Override
+public Optional<Student> getById(Integer id) {
+	return studentsRepository.findById(id);
 }
 
 	
