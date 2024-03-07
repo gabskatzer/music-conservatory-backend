@@ -4,11 +4,30 @@ values
 ('Leonardo Jimenez', 123, true, 'ljimenez@gmail.com', 'Heredia Centro', 'Estudiante', 'image', '2010-01-10', 323, 1),
 ('Natalia Lopez', 675, true, 'nlopez@gmail.com', 'La Trinidad, Alajuela', 'Estudiante', 'image', '2001-04-11', 323, 1),
 ('Ricardo Zepeda', 980, true, 'rzepeda@gmail.com', 'El Coyol, Alajuela', 'Administrador Empresas', 'image', '1987-09-09', 323, 1),
-('Dana Arias', 777, true, 'darias@gmail.com', 'La Aurora, Heredia', 'Periodista', 'image', '2013-01-10', 323, 1);
+('Dana Arias', 777, true, 'darias@gmail.com', 'La Aurora, Heredia', 'Periodista', 'image', '2013-01-10', 323, 1),
+('Ana Scott', 599, true, 'ascott@gmail.com', 'La Guacima, Alajuela', 'Doctora', 'image', '1985-04-11', 4567, 1),
+('Solopin Garcia', 342, true, 'dlopez@gmail.com', 'El Coyol, Alajuela', 'Administrador Empresas', 'image', '1981-09-10', 323, 1),
+('Juan Carlos Rudin', 599, true, 'juancrud@gmail.com', 'Ulloa, Heredia', 'Ingeniero', 'image', '1985-04-11', 4567, 1),
+('Ximun Alberto', 3142, true, 'elbergomeztorba@gmail.com', 'Centro, Alajuela', 'Administrador Empresas', 'image', '1981-09-10', 323, 1);
 
-insert into STUDENT(ID, EDUCATIONAL_LEVEL, TYPE)
+insert into STUDENT(ID, EDUCATIONAL_LEVEL, TYPE, PERSON_ID)
 values
-(1, 'bachellor', 'regular'),
-(2, 'high school', 'becado'),
-(3, 'bachellor', 'regular'),
-(4, 'bachellor', 'regular');
+(1, 'bachellor', 'regular', 1),
+(2, 'high school', 'becado', 2),
+(3, 'bachellor', 'regular', 3),
+(4, 'bachellor', 'regular', 4),
+(5, 'bachellor', 'regular', 5);
+
+insert into PROFESSOR(ID, PERSON_ID)
+values
+(1, 4),
+(2, 5),
+(3, 6),
+(4, 7);
+
+insert into COMMISSIONED(ID, PERSON_ID)
+VALUES
+(1, 4),
+(2, 7),
+(3, 8),
+(4, 9);

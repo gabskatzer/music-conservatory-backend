@@ -1,28 +1,10 @@
-package com.conservatory.data.domain;
+package com.conservatory.business.viewModels;
+
 import java.util.Date;
-//import java.time.LocalDate;
-//import java.util.Date;
-import java.util.List;
-
-//import org.springframework.format.annotation.DateTimeFormat;
-
-import com.conservatory.data.enums.PersonType;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.MappedSuperclass;
-
-@Entity
-//@Inheritance(strategy=InheritanceType.JOINED)
-public class Person {
 
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+public class PersonViewModel {
+
 	private int id;
 	
 	private String name;
@@ -41,6 +23,46 @@ public class Person {
 	
 	private Date dob;
 	
+	private Long phone1;
+	
+	private Long phone2;
+	private String studentType;
+	private boolean isStudent;
+	private boolean isProfessor;
+	private boolean isCommisioned;
+	
+
+	public boolean isStudent() {
+		return isStudent;
+	}
+
+	public void setStudent(boolean isStudent) {
+		this.isStudent = isStudent;
+	}
+
+	public boolean isProfessor() {
+		return isProfessor;
+	}
+
+	public void setProfessor(boolean isProfessor) {
+		this.isProfessor = isProfessor;
+	}
+
+	public boolean isCommisioned() {
+		return isCommisioned;
+	}
+
+	public void setCommisioned(boolean isCommisioned) {
+		this.isCommisioned = isCommisioned;
+	}
+
+	public String getStudentType() {
+		return studentType;
+	}
+
+	public void setStudentType(String studentType) {
+		this.studentType = studentType;
+	}
 
 	public Date getDob() {
 		return dob;
@@ -49,11 +71,7 @@ public class Person {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-
-	private Long phone1;
 	
-	private Long phone2;
-
 	public int getId() {
 		return id;
 	}
@@ -133,10 +151,4 @@ public class Person {
 	public void setPhone2(Long phone2) {
 		this.phone2 = phone2;
 	}
-
-	public Person() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
 }

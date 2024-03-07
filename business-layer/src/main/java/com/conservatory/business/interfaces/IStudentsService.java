@@ -3,7 +3,6 @@ package com.conservatory.business.interfaces;
 import java.util.List;
 import java.util.Optional;
 
-import com.conservatory.data.domain.Person;
 import com.conservatory.data.domain.Student;
 
 public interface IStudentsService {

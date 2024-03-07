@@ -19,7 +19,8 @@ public class StudentsService implements IStudentsService{
 	
 	@Override
 	public List<Student> getAllStudents() {
-		return studentsRepository.findAll();
+//		return studentsRepository.findAll();
+		return null;
 	}
 
 	public Student createStudent(Student student) {
