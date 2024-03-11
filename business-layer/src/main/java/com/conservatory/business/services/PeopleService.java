@@ -66,29 +66,43 @@ public class PeopleService implements IPeopleService{
 				result.setName(student.get().getPerson().getName());
 				result.setPersonId(student.get().getPerson().getPersonId());
 				result.setActive(student.get().getPerson().isActive());
+				result.setAddress(student.get().getPerson().getAddress());
+				result.setOccupation(student.get().getPerson().getOccupation());
+				result.setImage(student.get().getPerson().getImage());
+				result.setDob(student.get().getPerson().getDob());
+				result.setPhone1(student.get().getPerson().getPhone1());
+				result.setPhone2(student.get().getPerson().getPhone2());
 				result.setStudent(true);
-				//todo rest of properties
 			}
 			if(professor.isPresent()) {
 				result.setId(professor.get().getPerson().getId());
 				result.setName(professor.get().getPerson().getName());
 				result.setPersonId(professor.get().getPerson().getPersonId());
 				result.setActive(professor.get().getPerson().isActive());
+				result.setAddress(professor.get().getPerson().getAddress());
+				result.setOccupation(professor.get().getPerson().getOccupation());
+				result.setImage(professor.get().getPerson().getImage());
+				result.setDob(professor.get().getPerson().getDob());
+				result.setPhone1(professor.get().getPerson().getPhone1());
+				result.setPhone2(professor.get().getPerson().getPhone2());
 				result.setProfessor(true);
-				//todo rest of properties
 			}
 			if(commissioned.isPresent()) {
 				result.setId(commissioned.get().getPerson().getId());
 				result.setName(commissioned.get().getPerson().getName());
 				result.setPersonId(commissioned.get().getPerson().getPersonId());
 				result.setActive(commissioned.get().getPerson().isActive());
+				result.setAddress(commissioned.get().getPerson().getAddress());
+				result.setOccupation(commissioned.get().getPerson().getOccupation());
+				result.setImage(commissioned.get().getPerson().getImage());
+				result.setDob(commissioned.get().getPerson().getDob());
+				result.setPhone1(commissioned.get().getPerson().getPhone1());
+				result.setPhone2(commissioned.get().getPerson().getPhone2());
 				result.setCommisioned(true);
-				//todo rest of properties
 			}
 			
 			return result;
 		}).toList();
-//		return null;
 	}
 
 	@Override

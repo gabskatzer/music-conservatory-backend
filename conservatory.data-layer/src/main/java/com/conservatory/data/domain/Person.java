@@ -40,7 +40,10 @@ public class Person {
 	private String image;
 	
 	private Date dob;
+
+	private Long phone1;
 	
+	private Long phone2;
 
 	public Date getDob() {
 		return dob;
@@ -50,9 +53,7 @@ public class Person {
 		this.dob = dob;
 	}
 
-	private Long phone1;
 	
-	private Long phone2;
 
 	public int getId() {
 		return id;
