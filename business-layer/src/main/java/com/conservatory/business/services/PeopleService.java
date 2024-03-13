@@ -17,10 +17,14 @@ import com.conservatory.data.domain.Person;
 import com.conservatory.data.domain.Professor;
 import com.conservatory.data.domain.Student;
 import com.conservatory.data.interfaces.ICommissionerRepository;
+import com.conservatory.data.interfaces.IPersonRepository;
 import com.conservatory.data.interfaces.IProfessorRepository;
 import com.conservatory.data.interfaces.IStudentsRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
+@Transactional
 public class PeopleService implements IPeopleService{
 
 	@Autowired
@@ -31,6 +35,9 @@ public class PeopleService implements IPeopleService{
 	
 	@Autowired
 	private ICommissionerRepository commissionerRepository;
+	
+	@Autowired
+	private IPersonRepository personRepository;
 	
 	@Override
 	public List<PersonViewModel> getAllPeople() {
@@ -72,6 +79,7 @@ public class PeopleService implements IPeopleService{
 				result.setDob(student.get().getPerson().getDob());
 				result.setPhone1(student.get().getPerson().getPhone1());
 				result.setPhone2(student.get().getPerson().getPhone2());
+				result.setStudentType(student.get().getType());
 				result.setStudent(true);
 			}
 			if(professor.isPresent()) {
@@ -125,15 +133,63 @@ public class PeopleService implements IPeopleService{
 
 	@Override
 	public void deletePerson(Integer id) {
-//		peopleRepository.deleteById(id);
-		
+		studentRepository.deleteByPersonId(id);
+		commissionerRepository.deleteByPersonId(id);
+		professorRepository.deleteByPersonId(id);
+		personRepository.deleteById(id);
 		
 	}
 
 	@Override
-	public Optional<Person> getById(Integer id) {
-//		return peopleRepository.findById(id);
-		return null;
+	public Optional<PersonViewModel> getById(Integer id) {
+		Optional<Student> student = studentRepository.getByPersonId(id);
+		Optional<Professor> professor = professorRepository.getByPersonId(id);
+		Optional<Commissioned> commissioned = commissionerRepository.getByPersonId(id);
+		
+		PersonViewModel result = new PersonViewModel();
+		
+		if(student.isPresent()) {
+			result.setId(student.get().getPerson().getId());
+			result.setName(student.get().getPerson().getName());
+			result.setPersonId(student.get().getPerson().getPersonId());
+			result.setActive(student.get().getPerson().isActive());
+			result.setAddress(student.get().getPerson().getAddress());
+			result.setOccupation(student.get().getPerson().getOccupation());
+			result.setImage(student.get().getPerson().getImage());
+			result.setDob(student.get().getPerson().getDob());
+			result.setPhone1(student.get().getPerson().getPhone1());
+			result.setPhone2(student.get().getPerson().getPhone2());
+			result.setStudentType(student.get().getType());
+			result.setStudent(true);
+		}
+		if(professor.isPresent()) {
+			result.setId(professor.get().getPerson().getId());
+			result.setName(professor.get().getPerson().getName());
+			result.setPersonId(professor.get().getPerson().getPersonId());
+			result.setActive(professor.get().getPerson().isActive());
+			result.setAddress(professor.get().getPerson().getAddress());
+			result.setOccupation(professor.get().getPerson().getOccupation());
+			result.setImage(professor.get().getPerson().getImage());
+			result.setDob(professor.get().getPerson().getDob());
+			result.setPhone1(professor.get().getPerson().getPhone1());
+			result.setPhone2(professor.get().getPerson().getPhone2());
+			result.setProfessor(true);
+		}
+		if(commissioned.isPresent()) {
+			result.setId(commissioned.get().getPerson().getId());
+			result.setName(commissioned.get().getPerson().getName());
+			result.setPersonId(commissioned.get().getPerson().getPersonId());
+			result.setActive(commissioned.get().getPerson().isActive());
+			result.setAddress(commissioned.get().getPerson().getAddress());
+			result.setOccupation(commissioned.get().getPerson().getOccupation());
+			result.setImage(commissioned.get().getPerson().getImage());
+			result.setDob(commissioned.get().getPerson().getDob());
+			result.setPhone1(commissioned.get().getPerson().getPhone1());
+			result.setPhone2(commissioned.get().getPerson().getPhone2());
+			result.setCommisioned(true);
+		}
+		
+		return Optional.ofNullable(result);
 	}
 
 }

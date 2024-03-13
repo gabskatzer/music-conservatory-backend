@@ -9,7 +9,7 @@ import com.conservatory.data.domain.Person;
 public interface IPeopleService {
 	
 	List<PersonViewModel> getAllPeople();
-	Optional<Person> getById(Integer id);
+	Optional<PersonViewModel> getById(Integer id);
 	Person createPerson(Person person);
 	Person updatePerson(Integer id, Person updatedPerson);
 	void deletePerson(Integer id);

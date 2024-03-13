@@ -13,7 +13,7 @@ import jakarta.persistence.OneToOne;
 public class Student{
 	
 //	private Commissioned commissioned;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
 	@Id

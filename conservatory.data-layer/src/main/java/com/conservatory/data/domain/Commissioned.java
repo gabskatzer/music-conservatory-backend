@@ -11,7 +11,7 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Commissioned{
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
 	

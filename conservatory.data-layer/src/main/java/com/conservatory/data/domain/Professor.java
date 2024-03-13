@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Professor{
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
 //	private List<Instrument> instruments;
