@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.JOINED)

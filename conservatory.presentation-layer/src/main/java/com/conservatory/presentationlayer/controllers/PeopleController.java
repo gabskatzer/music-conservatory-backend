@@ -36,7 +36,7 @@ public class PeopleController {
 	
 	@Transactional
 	@PostMapping
-	public Person createPerson(@RequestBody Person person) {
+	public PersonViewModel createPerson(@RequestBody PersonViewModel person) {
 		return peopleService.createPerson(person);
 	}
 	
@@ -46,7 +46,7 @@ public class PeopleController {
 	}
 	
 	@PutMapping("/{id}")
-	public Person updatePerson(@PathVariable Integer id, @RequestBody Person updatedPerson) {
+	public PersonViewModel updatePerson(@PathVariable Integer id, @RequestBody PersonViewModel updatedPerson) {
 		return peopleService.updatePerson(id, updatedPerson);
 	}
 	

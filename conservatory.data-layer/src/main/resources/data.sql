@@ -10,24 +10,24 @@ values
 ('Juan Carlos Rudin', 599, true, 'juancrud@gmail.com', 'Ulloa, Heredia', 'Ingeniero', 'image', '1985-04-11', 4567, 1),
 ('Ximun Alberto', 3142, true, 'elbergomeztorba@gmail.com', 'Centro, Alajuela', 'Administrador Empresas', 'image', '1981-09-10', 323, 1);
 
-insert into STUDENT(ID, EDUCATIONAL_LEVEL, TYPE, PERSON_ID)
+insert into STUDENT(EDUCATIONAL_LEVEL, TYPE, PERSON_ID)
 values
-(1, 'bachellor', 'regular', 1),
-(2, 'high school', 'becado', 2),
-(3, 'bachellor', 'regular', 3),
-(4, 'bachellor', 'regular', 4),
-(5, 'bachellor', 'regular', 5);
+('bachellor', 'regular', 1),
+('high school', 'becado', 2),
+('bachellor', 'regular', 3),
+('bachellor', 'regular', 4),
+('bachellor', 'regular', 5);
 
-insert into PROFESSOR(ID, PERSON_ID)
+insert into PROFESSOR(PERSON_ID)
 values
-(1, 4),
-(2, 5),
-(3, 6),
-(4, 7);
+(4),
+(5),
+(6),
+(7);
 
-insert into COMMISSIONED(ID, PERSON_ID)
+insert into COMMISSIONED(PERSON_ID)
 VALUES
-(1, 4),
-(2, 7),
-(3, 8),
-(4, 9);
+(4),
+(7),
+(8),
+(9);

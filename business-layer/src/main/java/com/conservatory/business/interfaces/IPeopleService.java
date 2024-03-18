@@ -10,8 +10,8 @@ public interface IPeopleService {
 	
 	List<PersonViewModel> getAllPeople();
 	Optional<PersonViewModel> getById(Integer id);
-	Person createPerson(Person person);
-	Person updatePerson(Integer id, Person updatedPerson);
+	PersonViewModel createPerson(PersonViewModel personViewModel);
+	PersonViewModel updatePerson(Integer id, PersonViewModel updatedPerson);
 	void deletePerson(Integer id);
 
 }

@@ -26,6 +26,27 @@ public class PersonViewModel {
 	private Long phone1;
 	
 	private Long phone2;
+	
+	private String relationship;
+	
+	private String educationalLevel;
+	
+	public String getRelationship() {
+		return relationship;
+	}
+
+	public void setRelationship(String relationship) {
+		this.relationship = relationship;
+	}
+
+	public String getEducationalLevel() {
+		return educationalLevel;
+	}
+
+	public void setEducationalLevel(String educationalLevel) {
+		this.educationalLevel = educationalLevel;
+	}
+
 	private String studentType;
 	private boolean isStudent;
 	private boolean isProfessor;

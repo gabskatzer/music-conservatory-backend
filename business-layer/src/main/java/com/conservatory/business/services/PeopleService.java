@@ -114,13 +114,44 @@ public class PeopleService implements IPeopleService{
 	}
 
 	@Override
-	public Person createPerson(Person person) {
-//		return peopleRepository.save(person);
-		return null;
+	public PersonViewModel createPerson(PersonViewModel personViewModel) {
+		Person person = new Person();
+		person.setPersonId(null);
+		person.setName(personViewModel.getName());
+		person.setOccupation(personViewModel.getOccupation());
+		person.setImage(personViewModel.getImage());
+		person.setDob(personViewModel.getDob());
+		person.setPhone1(personViewModel.getPhone1());
+		person.setPhone2(personViewModel.getPhone2());
+		person.setActive(personViewModel.isActive());
+		person.setAddress(personViewModel.getAddress());
+		
+		if(personViewModel.isStudent()) {
+			Student student = new Student();
+			student.setType(personViewModel.getStudentType());
+			student.setEducationalLevel(personViewModel.getEducationalLevel());
+			student.setPerson(person);
+			studentRepository.save(student);
+		}
+		if(personViewModel.isProfessor()) {
+			Professor professor = new Professor();
+			professor.setPerson(person);
+			professorRepository.save(professor);
+		}
+		if(personViewModel.isCommisioned()) {
+			Commissioned comm = new Commissioned();
+			comm.setPerson(person);
+			comm.setRelationship(personViewModel.getRelationship());
+			commissionerRepository.save(comm);
+		}
+		
+		personViewModel.setId(person.getId());
+
+		return personViewModel;
 	}
 
 	@Override
-	public Person updatePerson(Integer id, Person updatedPerson) {
+	public PersonViewModel updatePerson(Integer id, PersonViewModel updatedPerson) {
 //		if(peopleRepository.existsById(id)) {
 //			updatedPerson.setId(id);
 //			return peopleRepository.save(updatedPerson);
