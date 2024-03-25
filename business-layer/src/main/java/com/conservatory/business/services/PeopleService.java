@@ -151,14 +151,91 @@ public class PeopleService implements IPeopleService{
 	}
 
 	@Override
-	public PersonViewModel updatePerson(Integer id, PersonViewModel updatedPerson) {
-//		if(peopleRepository.existsById(id)) {
-//			updatedPerson.setId(id);
-//			return peopleRepository.save(updatedPerson);
-//		}else {
-//			return null;
-//		}
-		return null;
+	public PersonViewModel updatePerson(Integer id, PersonViewModel viewModel) {
+		Optional<Student> student = studentRepository.getByPersonId(id);
+		Optional<Professor> professor = professorRepository.getByPersonId(id);
+		Optional<Commissioned> comm = commissionerRepository.getByPersonId(id);
+		Person person = student.isPresent() ? student.get().getPerson() : professor.isPresent() ? professor.get().getPerson() : comm.get().getPerson();
+		
+		if(viewModel.isStudent()) {
+			
+			Student updatedStudent;
+			if(student.isPresent()) {
+				updatedStudent = student.get();
+			}else {
+				updatedStudent = new Student();
+				updatedStudent.setPerson(person);
+			}
+			updatedStudent.setType(viewModel.getStudentType());
+			updatedStudent.setEducationalLevel(viewModel.getEducationalLevel());
+			updatedStudent.getPerson().setActive(viewModel.isActive());
+			updatedStudent.getPerson().setAddress(viewModel.getAddress());
+			updatedStudent.getPerson().setDob(viewModel.getDob());
+			updatedStudent.getPerson().setEmail(viewModel.getEmail());
+			updatedStudent.getPerson().setImage(viewModel.getImage());
+			updatedStudent.getPerson().setName(viewModel.getName());
+			updatedStudent.getPerson().setOccupation(viewModel.getOccupation());
+			updatedStudent.getPerson().setPhone1(viewModel.getPhone1());
+			updatedStudent.getPerson().setPhone2(viewModel.getPhone2());
+			studentRepository.save(updatedStudent);
+		}
+		else {
+			if(student.isPresent()) {
+				studentRepository.delete(student.get());
+			}
+		}
+		
+		if(viewModel.isProfessor()) {
+			Professor updatedProfessor;
+			if(professor.isPresent()) {
+				updatedProfessor = professor.get();
+			}else {
+				updatedProfessor = new Professor();
+				updatedProfessor.setPerson(person);
+			}
+			updatedProfessor.getPerson().setActive(viewModel.isActive());
+			updatedProfessor.getPerson().setAddress(viewModel.getAddress());
+			updatedProfessor.getPerson().setDob(viewModel.getDob());
+			updatedProfessor.getPerson().setEmail(viewModel.getEmail());
+			updatedProfessor.getPerson().setImage(viewModel.getImage());
+			updatedProfessor.getPerson().setName(viewModel.getName());
+			updatedProfessor.getPerson().setOccupation(viewModel.getOccupation());
+			updatedProfessor.getPerson().setPhone1(viewModel.getPhone1());
+			updatedProfessor.getPerson().setPhone2(viewModel.getPhone2());
+			professorRepository.save(updatedProfessor);
+		}
+		else {
+			if(professor.isPresent()) {
+				professorRepository.delete(professor.get());
+			}
+		}
+		
+		if(viewModel.isCommisioned()) {
+			Commissioned updatedComm;
+			if(comm.isPresent()) {
+				updatedComm = comm.get();
+			}else {
+				updatedComm = new Commissioned();
+				updatedComm.setPerson(person);
+			}
+			updatedComm.getPerson().setActive(viewModel.isActive());
+			updatedComm.getPerson().setAddress(viewModel.getAddress());
+			updatedComm.getPerson().setDob(viewModel.getDob());
+			updatedComm.getPerson().setEmail(viewModel.getEmail());
+			updatedComm.getPerson().setImage(viewModel.getImage());
+			updatedComm.getPerson().setName(viewModel.getName());
+			updatedComm.getPerson().setOccupation(viewModel.getOccupation());
+			updatedComm.getPerson().setPhone1(viewModel.getPhone1());
+			updatedComm.getPerson().setPhone2(viewModel.getPhone2());
+			commissionerRepository.save(updatedComm);
+		
+		}
+		else {
+			if(comm.isPresent()) {
+				commissionerRepository.delete(comm.get());
+			}
+		}
+		return viewModel;
 		
 	}
 
