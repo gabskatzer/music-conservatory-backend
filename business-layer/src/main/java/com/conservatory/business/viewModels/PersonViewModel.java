@@ -50,7 +50,7 @@ public class PersonViewModel {
 	private String studentType;
 	private boolean isStudent;
 	private boolean isProfessor;
-	private boolean isCommisioned;
+	private boolean isCommissioned;
 	
 
 	public boolean isStudent() {
@@ -69,12 +69,12 @@ public class PersonViewModel {
 		this.isProfessor = isProfessor;
 	}
 
-	public boolean isCommisioned() {
-		return isCommisioned;
+	public boolean isCommissioned() {
+		return isCommissioned;
 	}
 
-	public void setCommisioned(boolean isCommisioned) {
-		this.isCommisioned = isCommisioned;
+	public void setCommissioned(boolean isCommissioned) {
+		this.isCommissioned = isCommissioned;
 	}
 
 	public String getStudentType() {

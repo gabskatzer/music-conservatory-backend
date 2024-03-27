@@ -106,7 +106,7 @@ public class PeopleService implements IPeopleService{
 				result.setDob(commissioned.get().getPerson().getDob());
 				result.setPhone1(commissioned.get().getPerson().getPhone1());
 				result.setPhone2(commissioned.get().getPerson().getPhone2());
-				result.setCommisioned(true);
+				result.setCommissioned(true);
 			}
 			
 			return result;
@@ -138,7 +138,7 @@ public class PeopleService implements IPeopleService{
 			professor.setPerson(person);
 			professorRepository.save(professor);
 		}
-		if(personViewModel.isCommisioned()) {
+		if(personViewModel.isCommissioned()) {
 			Commissioned comm = new Commissioned();
 			comm.setPerson(person);
 			comm.setRelationship(personViewModel.getRelationship());
@@ -210,7 +210,7 @@ public class PeopleService implements IPeopleService{
 			}
 		}
 		
-		if(viewModel.isCommisioned()) {
+		if(viewModel.isCommissioned()) {
 			Commissioned updatedComm;
 			if(comm.isPresent()) {
 				updatedComm = comm.get();
@@ -294,7 +294,7 @@ public class PeopleService implements IPeopleService{
 			result.setDob(commissioned.get().getPerson().getDob());
 			result.setPhone1(commissioned.get().getPerson().getPhone1());
 			result.setPhone2(commissioned.get().getPerson().getPhone2());
-			result.setCommisioned(true);
+			result.setCommissioned(true);
 		}
 		
 		return Optional.ofNullable(result);
