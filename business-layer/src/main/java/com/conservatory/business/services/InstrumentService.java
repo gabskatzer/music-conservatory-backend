@@ -30,4 +30,12 @@ public class InstrumentService implements IInstrumentService{
 		return instrumentRepository.save(instrument);
 	}
 
+	@Override
+	public void deleteInstrument(Integer id) {
+		instrumentRepository.deleteById(id);
+		
+	}
+	
+	
+
 }

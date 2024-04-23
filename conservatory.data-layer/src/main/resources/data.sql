@@ -31,3 +31,9 @@ VALUES
 (7),
 (8),
 (9);
+
+insert into INSTRUMENT(NAME, INDIVIDUAL)
+values
+('Violin', true),
+('Guitarra Popular', true),
+('Solfeo', false);

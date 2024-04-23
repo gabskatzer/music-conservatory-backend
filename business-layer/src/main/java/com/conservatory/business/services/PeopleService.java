@@ -1,11 +1,9 @@
 package com.conservatory.business.services;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,6 +69,7 @@ public class PeopleService implements IPeopleService{
 			if(student.isPresent()) {
 				result.setId(student.get().getPerson().getId());
 				result.setName(student.get().getPerson().getName());
+				result.setName(student.get().getPerson().getName());
 				result.setPersonId(student.get().getPerson().getPersonId());
 				result.setActive(student.get().getPerson().isActive());
 				result.setAddress(student.get().getPerson().getAddress());
@@ -85,6 +84,7 @@ public class PeopleService implements IPeopleService{
 			if(professor.isPresent()) {
 				result.setId(professor.get().getPerson().getId());
 				result.setName(professor.get().getPerson().getName());
+				result.setEmail(professor.get().getPerson().getEmail());
 				result.setPersonId(professor.get().getPerson().getPersonId());
 				result.setActive(professor.get().getPerson().isActive());
 				result.setAddress(professor.get().getPerson().getAddress());
@@ -98,6 +98,7 @@ public class PeopleService implements IPeopleService{
 			if(commissioned.isPresent()) {
 				result.setId(commissioned.get().getPerson().getId());
 				result.setName(commissioned.get().getPerson().getName());
+				result.setEmail(commissioned.get().getPerson().getEmail());
 				result.setPersonId(commissioned.get().getPerson().getPersonId());
 				result.setActive(commissioned.get().getPerson().isActive());
 				result.setAddress(commissioned.get().getPerson().getAddress());
@@ -119,6 +120,7 @@ public class PeopleService implements IPeopleService{
 		person.setPersonId(null);
 		person.setName(personViewModel.getName());
 		person.setOccupation(personViewModel.getOccupation());
+		person.setEmail(personViewModel.getEmail());
 		person.setImage(personViewModel.getImage());
 		person.setDob(personViewModel.getDob());
 		person.setPhone1(personViewModel.getPhone1());
@@ -259,6 +261,7 @@ public class PeopleService implements IPeopleService{
 		if(student.isPresent()) {
 			result.setId(student.get().getPerson().getId());
 			result.setName(student.get().getPerson().getName());
+			result.setEmail(student.get().getPerson().getEmail());
 			result.setPersonId(student.get().getPerson().getPersonId());
 			result.setActive(student.get().getPerson().isActive());
 			result.setAddress(student.get().getPerson().getAddress());
@@ -273,6 +276,7 @@ public class PeopleService implements IPeopleService{
 		if(professor.isPresent()) {
 			result.setId(professor.get().getPerson().getId());
 			result.setName(professor.get().getPerson().getName());
+			result.setEmail(professor.get().getPerson().getEmail());
 			result.setPersonId(professor.get().getPerson().getPersonId());
 			result.setActive(professor.get().getPerson().isActive());
 			result.setAddress(professor.get().getPerson().getAddress());
@@ -286,6 +290,7 @@ public class PeopleService implements IPeopleService{
 		if(commissioned.isPresent()) {
 			result.setId(commissioned.get().getPerson().getId());
 			result.setName(commissioned.get().getPerson().getName());
+			result.setEmail(commissioned.get().getPerson().getEmail());
 			result.setPersonId(commissioned.get().getPerson().getPersonId());
 			result.setActive(commissioned.get().getPerson().isActive());
 			result.setAddress(commissioned.get().getPerson().getAddress());
